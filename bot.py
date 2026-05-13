@@ -7,7 +7,7 @@ from subsai import SubsAI
 load_dotenv()
 
 Bot = Client(
-    "PersianTranscriberBot",
+    "videosubtitlesBot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
@@ -17,14 +17,14 @@ subs_ai = SubsAI()
 model = subs_ai.create_model('guillaumekln/faster-whisper', {'model_type': 'base'})
 
 START_TXT = """
-Hi {}, I'm whisper Bot.
+Hi {}, I'm video-subtitles Bot.
 
 Send a video to transcribe and generate srt.
 """
 
 START_BTN = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Source Code', url='https://github.com/soebb/whisper-bot'),
+        InlineKeyboardButton('Source Code', url='https://github.com/soebb'),
         ]]
     )
 
